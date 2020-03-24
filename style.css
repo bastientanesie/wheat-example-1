@@ -1,0 +1,45 @@
+/*
+  It's considered best practise to put your <link> 
+*/
+
+body {
+  /*
+    While the image is downloaded by the browser, this color will be visible.
+    It's useful to set a background color to black when you know the image being downloaded is mostly black/dark colors; otherwise you'll see a quick white background blink.
+    I set it to red so that hopefully you'll see it flash your screen before the image is loaded.
+  */
+  background-color: red;
+
+  background-image: url(https://images.unsplash.com/photo-1493606278519-11aa9f86e40a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+
+  /*
+    In order to place the background image dead center, while keeping it's ratio, we use the "background cover" technique
+    https://css-tricks.com/perfect-full-page-background-image/
+  */
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-title {
+  /* Did you know you could tweak the opacity of a color? or define colors using function like rgb() or hsl()? */
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  margin: 50px 25%;
+  padding: 20px;
+  text-align: center;
+}
+
+.theme-selector {
+  background-color: #ffffff;
+  border: solid 2px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  margin: 50px 25%;
+  padding: 20px;
+  text-align: center;
+}
+
+.theme-selector-input {
+  padding: 10px 20px;
+}

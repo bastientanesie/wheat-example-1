@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--
+      This meta "viewport" tells your device to scale the webpage to fit the pixel ratio of your screen.
+      It may come in handy if your building webpages for mobile devices.
+      Plus, it's a "best practice" nowadays, like defining the charset to utf-8 above ;-)
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Wheat Example 1</title>
+
+    <!--
+      The source code of the webpage is read sequentially by the browser, line by line basically.
+      Every time the browser hits a <script> or a <link>, it'll put that asset in a queue somewhere.
+      Once the browser had reached the last line of this page, it'll start unstacking the assets in the queue:
+      it'll start by downloading it and, if needed, process it. For a JS or CSS file, it means executing it.
+      (you could go around that and tell him to download and process it asyncronously but it's way beyond the example)
+      The browser goes one file at a time, so if a webpage has a lot of assets, that's what makes the
+      "loading" state going for so long sometimes.
+      So, since the header-script.js contains just an `window.alert()`, it'll be executed immediatly
+      and the CSS will not be loaded yet, thus the page will look pretty blank ;-)
+      The browser waits until you click "Ok" in the alert to resume the processing of your file, that's why
+      the CSS won't load until you close the alert!
+    -->
+    <script type="text/javascript" charset="utf-8" src="header-script.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <!--
+      It's considered best practise to put your <link> tags in the <head>
+      before your <script> tags (if you have any). That way, you make sure
+      your webpage will look good before any JS is processed by the browser.
+    -->
+  </head>
+  <body>
+    <h1 class="main-title">Wheat Example 1</h1>
+
+    <fieldset class="theme-selector">
+      <select name="theme" class="theme-selector-input" id="theme-selector">
+        <option>Please choose a theme</option>
+        <option value="water">Water</option>
+        <option value="wood">Wood</option>
+        <option value="fire">Fire</option>
+        <option value="cats">Cats</option>
+      </select>
+    </fieldset>
+
+    <script src="footer-script.js"></script>
+    <!--
+      Specifying `type="text/javascript"` and `charset="utf-8"` as I did in the <head>
+      is not required nowadays since browsers are smart enough make it as default.
+      But it costs nothing, and you're sure it'll be compatible with older browsers like IE -_-'...
+    -->
+  </body>
+</html>
